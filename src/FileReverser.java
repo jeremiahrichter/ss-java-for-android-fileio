@@ -13,6 +13,9 @@ public class FileReverser {
                 toWrite = reverseWord(read);
                 writer.write(toWrite);
             }
+
+            reader.close();
+            writer.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
         } catch (IOException e) {
@@ -21,7 +24,7 @@ public class FileReverser {
     }
 
     private String reverseWord(String input) {
-        return input;
+        return (new StringBuffer(input)).reverse().toString();
     }
 
     public static void main(String args[]) {}
